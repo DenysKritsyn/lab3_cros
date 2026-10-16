@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nova_poshta_mail_tracker/core/favorites/favorites_screen.dart';
+import 'package:nova_poshta_mail_tracker/core/profile/profile_screen.dart';
 
 class AccountBottomNavigation extends StatelessWidget {
   final int currentIndex;
@@ -18,7 +20,18 @@ class AccountBottomNavigation extends StatelessWidget {
         child: BottomNavigationBar(
           currentIndex: currentIndex,
           onTap: (index) {
-            // TODO: Switch between favorites, search and profile.
+            if (index == currentIndex) return;
+            if (index == 1) {
+              // TODO: Open search.
+              return;
+            }
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute<void>(
+                builder: (context) => index == 0
+                    ? const FavoritesScreen()
+                    : const ProfileScreen(),
+              ),
+            );
           },
           backgroundColor: Colors.white,
           elevation: 0,

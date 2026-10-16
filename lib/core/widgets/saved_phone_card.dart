@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 class SavedPhoneCard extends StatelessWidget {
   final String number;
   final String label;
+  final Widget? trailing;
 
-  const SavedPhoneCard({super.key, required this.number, required this.label});
+  const SavedPhoneCard({
+    super.key,
+    required this.number,
+    required this.label,
+    this.trailing,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +55,7 @@ class SavedPhoneCard extends StatelessWidget {
               ],
             ),
           ),
+          ?trailing,
         ],
       ),
     );

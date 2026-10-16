@@ -37,7 +37,7 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
     await tester.pumpWidget(const MaterialApp(home: FavoritesScreen()));
-    for (final label in ['Знайти', 'Пошук', 'Профіль']) {
+    for (final label in ['Знайти', 'Пошук']) {
       await tester.tap(find.text(label));
       await tester.pumpAndSettle();
     }

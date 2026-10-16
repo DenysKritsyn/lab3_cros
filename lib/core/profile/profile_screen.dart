@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nova_poshta_mail_tracker/core/profile/widgets/saved_phone_card.dart';
+import 'package:nova_poshta_mail_tracker/core/widgets/saved_phone_card.dart';
+import 'package:nova_poshta_mail_tracker/core/edit_profile/edit_profile_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/sign_in/sign_in_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/account_header.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/account_bottom_navigation.dart';
@@ -77,7 +78,11 @@ class ProfileScreen extends StatelessWidget {
                     Center(
                       child: OutlinedButton.icon(
                         onPressed: () {
-                          // TODO: Open profile editing.
+                          Navigator.of(context).push(
+                            MaterialPageRoute<void>(
+                              builder: (context) => const EditProfileScreen(),
+                            ),
+                          );
                         },
                         style: OutlinedButton.styleFrom(
                           backgroundColor: Colors.white,
