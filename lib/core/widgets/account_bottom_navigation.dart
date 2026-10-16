@@ -25,6 +25,7 @@ class AccountBottomNavigation extends StatelessWidget {
               // TODO: Open search.
               return;
             }
+            // Open FavoritesScreen for index 0 or ProfileScreen for index 2.
             Navigator.of(context).pushReplacement(
               MaterialPageRoute<void>(
                 builder: (context) => index == 0

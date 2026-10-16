@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nova_poshta_mail_tracker/core/forgot_password/widgets/password_reset_notice.dart';
-import 'package:nova_poshta_mail_tracker/core/widgets/custom_input.dart';
-import 'package:nova_poshta_mail_tracker/core/widgets/main_button.dart';
+import 'package:nova_poshta_mail_tracker/core/widgets/nova_input.dart';
+import 'package:nova_poshta_mail_tracker/core/widgets/nova_main_button.dart';
+import 'package:nova_poshta_mail_tracker/core/text_styles.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -69,6 +70,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           height: 42,
                           child: OutlinedButton(
                             onPressed: () {
+                              // Return to SignInScreen.
                               Navigator.of(context).pop();
                             },
                             style: OutlinedButton.styleFrom(
@@ -83,7 +85,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             child: const Icon(
                               Icons.arrow_back_rounded,
                               size: 20,
-                              semanticLabel: 'Назад',
                             ),
                           ),
                         ),
@@ -97,7 +98,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             fontSize: 26,
                             fontWeight: FontWeight.w900,
                             color: Color(0xFF111827),
-                            letterSpacing: -0.5,
                           ),
                         ),
                         const SizedBox(height: 8),
@@ -114,14 +114,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         // Email Input
                         const Text(
                           'Електронна пошта',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF1F2937),
-                          ),
+                          style: SemiBoldTextStyle(),
                         ),
                         const SizedBox(height: 8),
-                        CustomInput(
+                        NovaInput(
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
                           placeholder: 'name@example.com',
@@ -133,14 +129,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         // New Password Input
                         const Text(
                           'Новий пароль',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF1F2937),
-                          ),
+                          style: SemiBoldTextStyle(),
                         ),
                         const SizedBox(height: 8),
-                        CustomInput(
+                        NovaInput(
                           controller: _passwordController,
                           placeholder: "*********",
                           mainColor: applicationMainColor,
@@ -152,14 +144,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         // Confirm Password Input
                         const Text(
                           'Підтвердіть пароль',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF1F2937),
-                          ),
+                          style: SemiBoldTextStyle(),
                         ),
                         const SizedBox(height: 8),
-                        CustomInput(
+                        NovaInput(
                           controller: _confirmPasswordController,
                           placeholder: '*********',
                           mainColor: applicationMainColor,
@@ -169,7 +157,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         const SizedBox(height: 16),
 
                         // Reset Password Button
-                        MainButton(
+                        NovaMainButton(
                           onPressed: () {
                             // TODO: Validate the fields and request a password reset.
                           },
@@ -186,7 +174,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         const PasswordResetNotice(),
                         const Spacer(),
 
-                        // Link Expiration
+                        // Link Expiration tip
                         const Padding(
                           padding: EdgeInsets.only(top: 24.0, bottom: 16.0),
                           child: Center(

@@ -36,7 +36,7 @@ void main() {
     await tester.tap(find.text('Зберегти зміни'));
     await tester.pumpAndSettle();
     expect(find.byType(EditProfileScreen), findsOneWidget);
-    await tester.tap(find.byTooltip('Назад'));
+    await tester.tap(find.byIcon(Icons.arrow_back_rounded));
     await tester.pumpAndSettle();
     expect(find.byType(ProfileScreen), findsOneWidget);
     expect(find.text('Олена Мельник'), findsOneWidget);

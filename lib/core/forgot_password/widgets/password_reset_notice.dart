@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nova_poshta_mail_tracker/core/text_styles.dart';
 
 class PasswordResetNotice extends StatelessWidget {
   const PasswordResetNotice({super.key});
@@ -35,7 +36,7 @@ class PasswordResetNotice extends StatelessWidget {
                 SizedBox(height: 4),
                 Text(
                   'Ми надіслали лист для підтвердження зміни пароля.',
-                  style: TextStyle(fontSize: 12, color: Color(0xFF6B7280)),
+                  style: SmallFadeTextStyle(),
                 ),
               ],
             ),

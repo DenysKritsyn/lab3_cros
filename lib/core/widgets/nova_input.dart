@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:nova_poshta_mail_tracker/core/text_styles.dart';
 
-class CustomInput extends StatefulWidget {
+class NovaInput extends StatefulWidget {
   final TextEditingController? controller;
   final String placeholder;
   final Color mainColor;
   final bool isPassword;
   final TextInputType? keyboardType;
 
-  const CustomInput({
+  const NovaInput({
     super.key,
     required this.controller,
     required this.placeholder,
@@ -17,10 +18,10 @@ class CustomInput extends StatefulWidget {
   });
 
   @override
-  State<CustomInput> createState() => _CustomInputState();
+  State<NovaInput> createState() => _NovaInputState();
 }
 
-class _CustomInputState extends State<CustomInput> {
+class _NovaInputState extends State<NovaInput> {
   late bool _obscureText;
 
   @override
@@ -35,16 +36,10 @@ class _CustomInputState extends State<CustomInput> {
       controller: widget.controller,
       obscureText: widget.isPassword ? _obscureText : false,
       keyboardType: widget.keyboardType,
-      style: const TextStyle(
-        fontSize: 15,
-        color: Color(0xFF111827),
-      ),
+      style: const BaseTextStyle(),
       decoration: InputDecoration(
         hintText: widget.placeholder,
-        hintStyle: const TextStyle(
-          color: Color(0xFF9CA3AF),
-          fontSize: 15,
-        ),
+        hintStyle: const HintTextStyle(),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 16,

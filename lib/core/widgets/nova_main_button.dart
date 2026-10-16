@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MainButton extends StatelessWidget {
+class NovaMainButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Color color;
   final double fontSize;
@@ -12,7 +12,7 @@ class MainButton extends StatelessWidget {
   final String text;
   final IconData? icon;
 
-  const MainButton({
+  const NovaMainButton({
     super.key,
     required this.onPressed,
     required this.color,

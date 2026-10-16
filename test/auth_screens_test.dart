@@ -51,16 +51,19 @@ void main() {
     expect(find.text('Увійти'), findsOneWidget);
   });
 
-  testWidgets('Updates matching when either password changes', (tester) async {
+  testWidgets('Accepts confirmation input without password validation', (
+    tester,
+  ) async {
     await tester.pumpWidget(const MaterialApp(home: SignUpScreen()));
     final fields = find.byType(TextFormField);
     await tester.enterText(fields.at(1), 'password123');
     await tester.enterText(fields.at(2), 'password123');
     await tester.pump();
-    expect(find.text('Паролі збігаються'), findsOneWidget);
+    expect(find.text('Паролі збігаються'), findsNothing);
     await tester.enterText(fields.at(1), 'different123');
     await tester.pump();
-    expect(find.text('Паролі не збігаються'), findsOneWidget);
+    expect(find.text('Паролі не збігаються'), findsNothing);
+    expect(find.text('Паролі збігаються'), findsNothing);
     await tester.tap(find.byIcon(Icons.visibility_off_outlined).last);
     await tester.pump();
     expect(

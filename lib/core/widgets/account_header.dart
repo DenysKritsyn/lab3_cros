@@ -4,14 +4,14 @@ import 'package:nova_poshta_mail_tracker/core/widgets/auth_header.dart';
 class AccountHeader extends StatelessWidget {
   final String title;
   final VoidCallback onAccountPressed;
+  final Color mainColor;
 
   const AccountHeader({
     super.key,
     required this.title,
     required this.onAccountPressed,
+    required this.mainColor,
   });
-
-  static const Color applicationMainColor = Color(0xFFE22629);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class AccountHeader extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const AuthHeader(mainColor: applicationMainColor),
+          AuthHeader(mainColor: mainColor),
           const SizedBox(width: 16),
           Expanded(
             child: Text(
@@ -41,7 +41,7 @@ class AccountHeader extends StatelessWidget {
             onPressed: onAccountPressed,
             tooltip: 'Акаунт',
             padding: EdgeInsets.zero,
-            icon: const CircleAvatar(
+            icon: CircleAvatar(
               radius: 16,
               backgroundColor: Color(0xFFFFF0F1),
               child: Text(
@@ -49,7 +49,7 @@ class AccountHeader extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
-                  color: applicationMainColor,
+                  color: mainColor,
                 ),
               ),
             ),
