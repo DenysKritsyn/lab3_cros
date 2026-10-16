@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nova_poshta_mail_tracker/core/forgot_password/forgot_password_screen.dart';
+import 'package:nova_poshta_mail_tracker/core/sign_up/sign_up_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/auth_header.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/custom_input.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/main_button.dart';
@@ -121,7 +123,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (context) => const ForgotPasswordScreen(),
+                              ),
+                            );
+                          },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
                             minimumSize: Size.zero,
@@ -168,7 +176,13 @@ class _SignInScreenState extends State<SignInScreen> {
                                 ),
                               ),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute<void>(
+                                      builder: (context) => const SignUpScreen(),
+                                    ),
+                                  );
+                                },
                                 child: Text(
                                   'Зареєструватися',
                                   style: TextStyle(

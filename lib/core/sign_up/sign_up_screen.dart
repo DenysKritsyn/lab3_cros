@@ -174,7 +174,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).maybePop();
+                                    Navigator.of(context).pop();
                                   },
                                   child: Text(
                                     'Повернутися до входу',
