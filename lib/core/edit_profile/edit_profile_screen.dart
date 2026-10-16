@@ -6,6 +6,8 @@ import 'package:nova_poshta_mail_tracker/core/widgets/nova_main_button.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/saved_phone_card.dart';
 import 'package:nova_poshta_mail_tracker/core/text_styles.dart';
 
+
+
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
 
@@ -14,6 +16,30 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
+
+  final List<SavedPhoneCard> phoneNumbers = [
+  SavedPhoneCard(
+    number: '+380 67 312 48 90',
+    label: 'Основний',
+    onEdit: () {
+      // TODO: Edit the primary phone number.
+    },
+    onDelete: () {
+      // TODO: Delete the primary phone number.
+    },
+  ),
+  SavedPhoneCard(
+    number: '+380 93 805 16 42',
+    label: 'Робочий',
+    onEdit: () {
+      // TODO: Edit the work phone number.
+    },
+    onDelete: () {
+      // TODO: Delete the work phone number.
+    },
+  ),
+];
+
   final TextEditingController _nameController = TextEditingController(
     text: 'Олена Мельник',
   );
@@ -73,6 +99,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 // Profile Photo
                 ProfilePhoto(
                   text: 'ОМ',
@@ -139,28 +166,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ],
                 ),
                 PhoneNumbers(
-                  cards: [
-                    SavedPhoneCard(
-                      number: '+380 67 312 48 90',
-                      label: 'Основний',
-                      onEdit: () {
-                        // TODO: Edit the primary phone number.
-                      },
-                      onDelete: () {
-                        // TODO: Delete the primary phone number.
-                      },
-                    ),
-                    SavedPhoneCard(
-                      number: '+380 93 805 16 42',
-                      label: 'Робочий',
-                      onEdit: () {
-                        // TODO: Edit the work phone number.
-                      },
-                      onDelete: () {
-                        // TODO: Delete the work phone number.
-                      },
-                    ),
-                  ],
+                  cards: phoneNumbers,
                 ),
                 const SizedBox(height: 18),
 

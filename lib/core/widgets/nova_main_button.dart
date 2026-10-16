@@ -10,7 +10,7 @@ class NovaMainButton extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
   final String text;
-  final IconData? icon;
+  final IconData icon;
 
   const NovaMainButton({
     super.key,
@@ -28,9 +28,11 @@ class NovaMainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget button = SizedBox(
+    // Container ignores margin when it is null, so no extra checks are needed.
+    return Container(
       width: width,
       height: height,
+      margin: margin,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -46,10 +48,8 @@ class NovaMainButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (icon != null) ...[
-              Icon(icon, size: iconSize, color: Colors.white),
-              const SizedBox(width: 8),
-            ],
+            Icon(icon, size: iconSize, color: Colors.white),
+            const SizedBox(width: 8),
             Text(
               text,
               style: TextStyle(
@@ -62,14 +62,5 @@ class NovaMainButton extends StatelessWidget {
         ),
       ),
     );
-
-    if (margin != null) {
-      return Padding(
-        padding: margin!,
-        child: button,
-      );
-    }
-
-    return button;
   }
 }
