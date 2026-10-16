@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nova_poshta_mail_tracker/core/favorites/favorites_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/forgot_password/forgot_password_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/sign_up/sign_up_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/auth_header.dart';
@@ -151,7 +152,13 @@ class _SignInScreenState extends State<SignInScreen> {
 
                       // LogIn Button
                       MainButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute<void>(
+                              builder: (context) => const FavoritesScreen(),
+                            ),
+                          );
+                        },
                         text: 'Увійти',
                         fontSize: 16,
                         icon: Icons.login_rounded,

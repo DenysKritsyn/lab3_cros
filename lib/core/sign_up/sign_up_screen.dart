@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nova_poshta_mail_tracker/core/favorites/favorites_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/auth_header.dart';
 import 'package:nova_poshta_mail_tracker/core/sign_up/widgets/confirm_password_input.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/custom_input.dart';
@@ -145,7 +146,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         // Register Button
                         MainButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (context) => const FavoritesScreen(),
+                              ),
+                            );
+                          },
                           text: 'Зареєструватися',
                           fontSize: 16,
                           icon: Icons.person_add_alt_1_outlined,
