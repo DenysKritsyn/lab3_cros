@@ -4,7 +4,7 @@ import 'package:nova_poshta_mail_tracker/core/widgets/account_option.dart';
 import 'package:nova_poshta_mail_tracker/core/favorites/favorites_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/forgot_password/forgot_password_screen.dart';
 import 'package:nova_poshta_mail_tracker/core/sign_up/sign_up_screen.dart';
-import 'package:nova_poshta_mail_tracker/core/widgets/auth_header.dart';
+import 'package:nova_poshta_mail_tracker/core/widgets/app_branding.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/nova_input.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/nova_main_button.dart';
 import 'package:nova_poshta_mail_tracker/core/text_styles.dart';
@@ -49,7 +49,7 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(height: 12),
 
               // Logo and application's name
-              AuthHeader(mainColor: applicationMainColor),
+              AppBranding(mainColor: applicationMainColor),
 
               const SizedBox(height: 36),
 

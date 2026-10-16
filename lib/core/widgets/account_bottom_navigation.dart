@@ -21,16 +21,21 @@ class AccountBottomNavigation extends StatelessWidget {
           currentIndex: currentIndex,
           onTap: (index) {
             if (index == currentIndex) return;
-            if (index == 1) {
-              // TODO: Open search.
-              return;
-            }
-            // Open FavoritesScreen for index 0 or ProfileScreen for index 2.
+
             Navigator.of(context).pushReplacement(
               MaterialPageRoute<void>(
-                builder: (context) => index == 0
-                    ? const FavoritesScreen()
-                    : const ProfileScreen(),
+                builder: (context) {
+                  switch (index) {
+                    case 0:
+                      return const FavoritesScreen();
+                    case 1:
+                      // TODO: open search
+                    case 2:
+                      return const ProfileScreen();
+                    default:
+                      return const FavoritesScreen();
+                  }
+                },
               ),
             );
           },
@@ -42,32 +47,16 @@ class AccountBottomNavigation extends StatelessWidget {
           unselectedFontSize: 11,
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.favorite_border_rounded, size: 22),
-              activeIcon: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFFF0F1),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: const Icon(Icons.favorite_border_rounded, size: 22),
-              ),
+            _NavigationItem(
+              icon: Icons.favorite_border_rounded,
               label: 'Вибране',
             ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.search_rounded, size: 22),
+            _NavigationItem(
+              icon: Icons.search_rounded,
               label: 'Пошук',
             ),
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.person_outline_rounded, size: 22),
-              activeIcon: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFFF0F1),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: const Icon(Icons.person_outline_rounded, size: 22),
-              ),
+            _NavigationItem(
+              icon: Icons.person_outline_rounded,
               label: 'Профіль',
             ),
           ],
@@ -75,4 +64,20 @@ class AccountBottomNavigation extends StatelessWidget {
       ),
     );
   }
+}
+
+class _NavigationItem extends BottomNavigationBarItem {
+  _NavigationItem({required IconData icon, required String label})
+    : super(
+        label: label,
+        icon: Icon(icon, size: 22),
+        activeIcon: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+          decoration: BoxDecoration(
+            color: const Color(0xFFFFF0F1),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Icon(icon, size: 22),
+        ),
+      );
 }

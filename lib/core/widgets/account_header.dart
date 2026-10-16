@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nova_poshta_mail_tracker/core/widgets/auth_header.dart';
+import 'package:nova_poshta_mail_tracker/core/widgets/app_branding.dart';
 
 class AccountHeader extends StatelessWidget {
   final String title;
@@ -23,8 +23,12 @@ class AccountHeader extends StatelessWidget {
       ),
       child: Row(
         children: [
-          AuthHeader(mainColor: mainColor),
+
+          // Application name and logo
+          AppBranding(mainColor: mainColor),
           const SizedBox(width: 16),
+
+          // Title
           Expanded(
             child: Text(
               title,
@@ -37,6 +41,8 @@ class AccountHeader extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 16),
+
+          // Avatar
           IconButton(
             onPressed: onAccountPressed,
             tooltip: 'Акаунт',

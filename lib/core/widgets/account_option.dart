@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nova_poshta_mail_tracker/core/text_styles.dart';
 
+
+// Purpuse: create a text-tip button out of two parts
 class AccountOption extends StatelessWidget {
   final String text;
   final String actionText;

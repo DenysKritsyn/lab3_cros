@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AuthHeader extends StatelessWidget {
+
+// Application name and logo
+class AppBranding extends StatelessWidget {
   final Color mainColor;
 
-  const AuthHeader({
+  const AppBranding({
     super.key,
     required this.mainColor,
   });

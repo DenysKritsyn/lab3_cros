@@ -34,17 +34,17 @@ class ProfilePhoto extends StatelessWidget {
                   radius: (size / 2 - 3).clamp(0.0, double.infinity),
                   backgroundColor: Color(0xFFFFF0F1),
                   child: icon != null
-                      ? Icon(icon, size: size * 0.4, color: mainColor)
-                      : text != null
-                      ? Text(
-                          text!,
-                          style: TextStyle(
-                            fontSize: size * 0.3,
-                            fontWeight: FontWeight.w700,
-                            color: mainColor,
-                          ),
-                        )
-                      : null,
+                    ? Icon(icon, size: size * 0.4, color: mainColor)
+                    : text != null
+                    ? Text(
+                        text!,
+                        style: TextStyle(
+                          fontSize: size * 0.3,
+                          fontWeight: FontWeight.w700,
+                          color: mainColor,
+                        ),
+                      )
+                    : null,
                 ),
               ),
               Positioned(

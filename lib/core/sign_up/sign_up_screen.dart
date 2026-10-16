@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/account_option.dart';
 import 'package:nova_poshta_mail_tracker/core/favorites/favorites_screen.dart';
-import 'package:nova_poshta_mail_tracker/core/widgets/auth_header.dart';
+import 'package:nova_poshta_mail_tracker/core/widgets/app_branding.dart';
 import 'package:nova_poshta_mail_tracker/core/sign_up/widgets/confirm_password_input.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/nova_input.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/nova_main_button.dart';
@@ -53,7 +53,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 12),
 
                 // Logo and application's name
-                AuthHeader(mainColor: applicationMainColor),
+                AppBranding(mainColor: applicationMainColor),
 
                 const SizedBox(height: 28),
 
