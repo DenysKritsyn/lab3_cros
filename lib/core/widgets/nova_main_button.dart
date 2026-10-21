@@ -28,7 +28,6 @@ class NovaMainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Container ignores margin when it is null, so no extra checks are needed.
     return Container(
       width: width,
       height: height,
