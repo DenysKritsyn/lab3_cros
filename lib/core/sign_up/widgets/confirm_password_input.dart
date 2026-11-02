@@ -3,7 +3,6 @@ import 'package:nova_poshta_mail_tracker/core/text_styles.dart';
 import 'package:nova_poshta_mail_tracker/core/widgets/nova_input.dart';
 
 class ConfirmPasswordInput extends StatelessWidget {
-  // TODO: Use this controller when password validation is implemented.
   final TextEditingController passwordController;
   final TextEditingController controller;
   final Color mainColor;
